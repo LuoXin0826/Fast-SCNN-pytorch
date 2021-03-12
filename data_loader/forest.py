@@ -175,7 +175,8 @@ def _get_forest_pairs(folder, split='train'):
                     maskpath = os.path.join(mask_folder, foldername, maskname)
                     print('##################################################3')
                     print(maskname)
-                    print(maskpath)
+                    print(mask_folder)
+                    print(foldername)
                     if os.path.isfile(imgpath) and os.path.isfile(maskpath):
                         img_paths.append(imgpath)
                         mask_paths.append(maskpath)
