@@ -1,4 +1,5 @@
 from .cityscapes import CitySegmentation
+from .forest import Forest
 
 datasets = {
     'citys': CitySegmentation,

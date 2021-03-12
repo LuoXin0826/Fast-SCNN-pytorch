@@ -201,5 +201,5 @@ def _get_forest_pairs(folder, split='train'):
 
 
 if __name__ == '__main__':
-    dataset = CitySegmentation()
+    dataset = Forest()
     img, label = dataset[0]
