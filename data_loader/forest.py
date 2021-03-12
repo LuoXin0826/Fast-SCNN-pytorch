@@ -173,11 +173,17 @@ def _get_forest_pairs(folder, split='train'):
                     maskname = filename.replace('images', 'labels_id')
                     maskpath = os.path.join(mask_folder, maskname)
                     if os.path.isfile(imgpath) and os.path.isfile(maskpath):
+                        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                        print(imgpath)
+                        print(maskpath)
                         img_paths.append(imgpath)
                         mask_paths.append(maskpath)
                     else:
                         print('cannot find the mask or image:', imgpath, maskpath)
         print('Found {} images in the folder {}'.format(len(img_paths), img_folder))
+        print('#######################################')
+        print(len(img_paths))
+        print(len(mask_paths))
         return img_paths, mask_paths
 
     if split in ('train', 'val'):
