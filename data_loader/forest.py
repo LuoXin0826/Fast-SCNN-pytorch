@@ -55,9 +55,7 @@ class Forest(data.Dataset):
             raise RuntimeError("Found 0 images in subfolders of: " + self.root + "\n")
         self.valid_classes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
         self._key = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
-        self._mapping = np.array(range(-1, len(self._key) - 1)).astype('int32')
-        print('###################################3')
-        print(self._mapping)
+        self._mapping = np.array(range(0, len(self._key))).astype('int32')
 
     def _class_to_index(self, mask):
         values = np.unique(mask)
