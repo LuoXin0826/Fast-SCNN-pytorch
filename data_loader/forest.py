@@ -186,6 +186,9 @@ def _get_forest_pairs(folder, split='train'):
     if split in ('train', 'val'):
         img_folder = os.path.join(folder, 'images/' + split)
         mask_folder = os.path.join(folder, 'labels_id/' + split)
+        print('****************************************')
+        print(img_folder)
+        print(mask_folder)
         img_paths, mask_paths = get_path_pairs(img_folder, mask_folder)
         return img_paths, mask_paths
     else:
@@ -196,9 +199,6 @@ def _get_forest_pairs(folder, split='train'):
         val_img_folder = os.path.join(folder, 'images/val')
         val_mask_folder = os.path.join(folder, 'labels_id/val')
         train_img_paths, train_mask_paths = get_path_pairs(train_img_folder, train_mask_folder)
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-        print(val_img_folder)
-        print(val_mask_folder)
         val_img_paths, val_mask_paths = get_path_pairs(val_img_folder, val_mask_folder)
         img_paths = train_img_paths + val_img_paths
         mask_paths = train_mask_paths + val_mask_paths
