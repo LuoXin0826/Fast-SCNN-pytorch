@@ -2,6 +2,7 @@ from .cityscapes import CitySegmentation
 
 datasets = {
     'citys': CitySegmentation,
+    'forest': Forest,
 }
 
 
