@@ -100,7 +100,7 @@ class Trainer(object):
                 self.model.load_state_dict(torch.load(args.resume, map_location=lambda storage, loc: storage))
 
         # create criterion
-        self.criterion = MixSoftmaxCrossEntropyOHEMLoss(aux=args.aux, aux_weight=args.aux_weight,
+        self.criterion = MixSoftmaxCrossEntropyLoss(aux=args.aux, aux_weight=args.aux_weight,
                                                         ignore_index=-1).to(args.device)
 
         # optimizer
