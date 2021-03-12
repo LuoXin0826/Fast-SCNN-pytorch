@@ -30,7 +30,7 @@ def parse_args():
     parser.add_argument('--train-split', type=str, default='train',
                         help='dataset train split (default: train)')
     # training hyper params
-    parser.add_argument('--aux', action='store_true', default=False,
+    parser.add_argument('--aux', action='store_true', default=True,
                         help='Auxiliary loss')
     parser.add_argument('--aux-weight', type=float, default=0.4,
                         help='auxiliary loss weight')
