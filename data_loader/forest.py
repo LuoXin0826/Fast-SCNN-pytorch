@@ -185,6 +185,9 @@ def _get_forest_pairs(folder, split='train'):
     if split in ('train', 'val'):
         img_folder = os.path.join(folder, 'images/' + split)
         mask_folder = os.path.join(folder, 'labels_id/' + split)
+        if self.mode == 'test':
+            img_folder = os.path.join(folder, 'images/')
+            mask_folder = os.path.join(folder, 'labels_id/')
         img_paths, mask_paths = get_path_pairs(img_folder, mask_folder)
         return img_paths, mask_paths
     else:
