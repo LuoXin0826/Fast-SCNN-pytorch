@@ -24,7 +24,7 @@ class Evaluator(object):
             transforms.Normalize([.485, .456, .406], [.229, .224, .225]),
         ])
         # dataset and dataloader
-        val_dataset = get_segmentation_dataset(args.dataset, split='val', mode='testval',
+        val_dataset = get_segmentation_dataset(args.dataset, split='val', mode='test',
                                                transform=input_transform)
         self.val_loader = data.DataLoader(dataset=val_dataset,
                                           batch_size=1,
