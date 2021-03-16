@@ -4,7 +4,7 @@ from PIL import Image
 __all__ = ['get_color_pallete']
 
 
-def get_color_pallete(npimg, dataset='citys'):
+def get_color_pallete(npimg, dataset='forest'):
     """Visualize image.
 
     Parameters
@@ -30,6 +30,10 @@ def get_color_pallete(npimg, dataset='citys'):
     elif dataset == 'citys':
         out_img = Image.fromarray(npimg.astype('uint8'))
         out_img.putpalette(cityspallete)
+        return out_img
+    elif dataset == 'forest':
+        out_img = Image.fromarray(npimg.astype('uint8'))
+        out_img.putpalette(forestpallete)
         return out_img
     out_img = Image.fromarray(npimg.astype('uint8'))
     out_img.putpalette(vocpallete)
@@ -96,4 +100,28 @@ cityspallete = [
     0, 80, 100,
     0, 0, 230,
     119, 11, 32,
+]
+
+forestpallete = [
+    29, 28, 33,
+    208, 235, 160,
+    43, 237, 21,
+    217, 240, 17,
+    186, 24, 65,
+    237, 9, 28,
+    235, 45, 98,
+    20, 99, 143,
+    157, 199, 194,
+    237, 61, 55,
+    32, 39, 232,
+    37, 193, 245,
+    132, 143, 127,
+    25, 151, 209,
+    83, 90, 169,
+    158, 163, 62,
+    182, 55, 127,
+    101, 28, 173,
+    162, 168, 104,
+    162, 135, 176,
+    45, 149, 238,
 ]
