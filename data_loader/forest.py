@@ -68,15 +68,15 @@ class Forest(data.Dataset):
 
     def __getitem__(self, index):
         img = Image.open(self.images[index]).convert('RGB')
-        if self.mode == 'test':
-            if self.transform is not None:
-                img = self.transform(img)
-            return img, os.path.basename(self.images[index])
+        # if self.mode == 'test':
+        #     if self.transform is not None:
+        #         img = self.transform(img)
+        #     return img, os.path.basename(self.images[index])
         mask = Image.open(self.mask_paths[index])
         # synchrosized transform
         if self.mode == 'train':
             img, mask = self._sync_transform(img, mask)
-        elif self.mode == 'val':
+        elif self.mode in ('val', 'test'):
             img, mask = self._val_sync_transform(img, mask)
         else:
             assert self.mode == 'testval'

@@ -44,8 +44,6 @@ class Evaluator(object):
 
             pred = torch.argmax(outputs[0], 1)
             pred = pred.cpu().data.numpy()
-            print('***************************')
-            print(label)
             label = label.numpy()
 
             self.metric.update(pred, label)
