@@ -46,6 +46,8 @@ class Forest(data.Dataset):
         self.root = root
         self.split = split
         self.mode = mode if mode is not None else split
+        if mode == 'test':
+            self.root = './forest_fast-scnn/testing'
         self.transform = transform
         self.base_size = base_size
         self.crop_size = crop_size
