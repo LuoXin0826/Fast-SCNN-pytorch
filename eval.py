@@ -14,6 +14,8 @@ from train import parse_args
 class Evaluator(object):
     def __init__(self, args):
         self.args = args
+        print('#########################################')
+        print(args.dataset)
         # output folder
         self.outdir = 'test_result'
         if not os.path.exists(self.outdir):
