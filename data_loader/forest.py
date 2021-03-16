@@ -51,7 +51,7 @@ class Forest(data.Dataset):
         self.transform = transform
         self.base_size = base_size
         self.crop_size = crop_size
-        self.images, self.mask_paths = _get_forest_pairs(self.root, self.split, self.mode)
+        self.images, self.mask_paths = _get_forest_pairs(self.root, self.mode, self.split)
         assert (len(self.images) == len(self.mask_paths))
         if len(self.images) == 0:
             raise RuntimeError("Found 0 images in subfolders of: " + self.root + "\n")
@@ -164,7 +164,7 @@ class Forest(data.Dataset):
     def pred_offset(self):
         return 0
 
-def _get_forest_pairs(folder, split='train', mode):
+def _get_forest_pairs(folder, mode, split='train'):
     def get_path_pairs(img_folder, mask_folder):
         img_paths = []
         mask_paths = []
